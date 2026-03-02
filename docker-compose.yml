@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio-local
+    ports:
+      - "9000:9000"  # The API Port (Python uses this)
+      - "9001:9001"  # The Web Console Port (You use this in your browser)
+    environment:
+      # These are your default login credentials
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    # This command starts the server and routes the UI to port 9001
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+
+volumes:
+  minio_data:
