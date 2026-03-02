@@ -48,3 +48,4 @@
   2. Based on this setup MinIO's Web Console runs on Port: `9001`
   3. You can setup the `username` and `password` of minio in the `docker-compose.yml` file
   4. By default `username` and `password` are set to `minioadmin`
+  5. Gemini Reference: [Kafka & MinIO](https://gemini.google.com/share/45540eda06c7)
